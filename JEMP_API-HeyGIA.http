@@ -1,0 +1,6 @@
+@JEMP_API_HeyGIA_HostAddress = http://localhost:5098
+
+GET {{JEMP_API_HeyGIA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
