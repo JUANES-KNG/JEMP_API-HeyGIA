@@ -1,5 +1,5 @@
 using JEMP_API_HeyGIA.Data;
-using JEMP_API_HeyGIA.Services; // <- namespace donde tengas IRuletaService y RuletaService
+using JEMP_API_HeyGIA.Services;
 using JEMP_API_HeyGIA.Services.RuletaApi.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 3. Base de datos (SQLite para simplicidad)
+// 3. Base de datos (Se escogio SQLite por simplicidad)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=ruleta.db"));
 

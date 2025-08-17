@@ -26,6 +26,9 @@ namespace JEMP_API_HeyGIA.Services
                 return r.Id;
             }
 
+            /// <summary>
+            /// Abre una ruleta (si ya está abierta, no hace nada).
+            /// </summary>
             public async Task<bool> AbrirRuletaAsync(int ruletaId)
             {
                 var r = await _db.Ruletas.FindAsync(ruletaId);
@@ -124,6 +127,7 @@ namespace JEMP_API_HeyGIA.Services
                     });
                 }
 
+                //Marca ruleta como "Cerrada"
                 r.EstaAbierta = false;
                 await _db.SaveChangesAsync();
 
@@ -135,6 +139,9 @@ namespace JEMP_API_HeyGIA.Services
                 };
             }
 
+            /// <summary>
+            /// Determina color ganador según paridad del número.
+            /// </summary>
             private static string ColorPorNumero(int n) =>
                 (n % 2 == 0) ? "rojo" : "negro";
         }
